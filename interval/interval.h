@@ -7,6 +7,9 @@ public:
     interval();
     interval(double min, double max);
 
+    double min() const;
+    double max() const;
+
     double size() const;
     bool contains(double d) const;
     bool surrounds(double d) const;

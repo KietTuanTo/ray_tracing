@@ -10,5 +10,6 @@ cc_binary(
         "//hittable",
         "//hittable/hittable_list",
         "//hittable/sphere",
+        "//interval",
     ],
 )

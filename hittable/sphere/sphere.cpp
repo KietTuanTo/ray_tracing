@@ -5,7 +5,7 @@
 
 sphere::sphere(const point3& centre, double radius) : centre_{centre}, radius_{std::max(radius, 0.0)} {};
 
-bool sphere::hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec) const {
+bool sphere::hit(const ray& r, interval ray_t, hit_record& rec) const {
     vec3 origin_to_centre = centre_ - r.origin();
     auto a = r.direction().length_squared();
     auto h = dot(r.direction(), origin_to_centre);
@@ -16,9 +16,9 @@ bool sphere::hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec
     
     auto sqrtd = std::sqrt(discriminant);
     auto root = (h - sqrtd) / a;
-    if (root <= ray_tmin || ray_tmax <= root) {
+    if (root <= ray_t.min() || ray_t.max() <= root) {
         root = (h + sqrtd) / a;
-        if (root <= ray_tmin || ray_tmax <= root) {
+        if (root <= ray_t.min() || ray_t.max() <= root) {
             return false;
         }
     }

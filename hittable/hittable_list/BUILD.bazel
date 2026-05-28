@@ -12,6 +12,7 @@ cc_library(
         "//vec3",
         "//ray",
         "//hittable",
+        "//interval",
     ],
     visibility = [
         "//visibility:public",
@@ -26,6 +27,7 @@ cc_test(
     deps = [
         ":hittable_list",
         "//hittable/sphere",
+        "//interval",
         "@googletest//:gtest",
         "@googletest//:gtest_main",
     ],

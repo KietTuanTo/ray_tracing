@@ -6,6 +6,7 @@ cc_library(
         "hittable.h",
     ],
     deps = [
+        "//interval",
         "//vec3",
         "//ray",
     ],
