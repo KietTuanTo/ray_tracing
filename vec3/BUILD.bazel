@@ -1,4 +1,4 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 
 cc_library(
     name = "vec3",
@@ -7,8 +7,20 @@ cc_library(
     ],
     hdrs = [
         "vec3.h",
-    ]
+    ],
     visibility = [
         "//visibility:public",
+    ],
+)
+
+cc_test(
+    name = "vec3_test",
+    srcs = [
+        "vec3_test.cpp",
+    ],
+    deps = [
+        ":vec3",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
     ],
 )

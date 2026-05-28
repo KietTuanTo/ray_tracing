@@ -1,6 +1,6 @@
 #include "vec3.h"
 #include <cmath>
-#include <exception>
+#include <stdexcept>
 
 vec3::vec3() : e{0, 0, 0} {};
 
@@ -88,8 +88,8 @@ double dot(const vec3& u, const vec3& v) {
 
 vec3 cross(const vec3& u, const vec3& v) {
     return vec3(u[1] * v[2] - u[2] * v[1],
-                u[2] * v[0] - u[0] - v[2],
-                u[0] * v[1] - u[1] - v[0]);
+                u[2] * v[0] - u[0] * v[2],
+                u[0] * v[1] - u[1] * v[0]);
 }
 
 vec3 unit_vector(const vec3& v) {
