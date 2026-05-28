@@ -1,0 +1,14 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "vec3",
+    srcs = [
+        "vec3.cpp",
+    ],
+    hdrs = [
+        "vec3.h",
+    ]
+    visibility = [
+        "//visibility:public",
+    ],
+)
