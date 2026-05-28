@@ -1,0 +1,29 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "interval",
+    srcs = [
+        "interval.cpp",
+    ],
+    hdrs = [
+        "interval.h",
+    ],
+    deps = [
+        "//common",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
+
+cc_test(
+    name = "interval_test",
+    srcs = [
+        "interval_test.cpp",
+    ],
+    deps = [
+        ":interval",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)

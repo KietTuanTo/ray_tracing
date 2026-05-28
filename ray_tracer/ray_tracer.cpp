@@ -5,7 +5,7 @@
 
 color ray_color(const ray& r, const hittable& world) {
     hit_record rec;
-    if (world.hit(r, 0, ray_common::infinity, rec)) {
+    if (world.hit(r, 0, rt::infinity, rec)) {
         return 0.5 * color(rec.normal + color(1, 1, 1));
     }
 
