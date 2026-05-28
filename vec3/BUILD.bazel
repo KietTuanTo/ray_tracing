@@ -15,8 +15,14 @@ cc_library(
 
 cc_library(
     name = "color",
+    srcs = [
+        "color.cpp",
+    ],
     hdrs = [
         "color.h",
+    ],
+    deps = [
+        ":vec3",
     ],
     visibility = [
         "//visibility:public",
