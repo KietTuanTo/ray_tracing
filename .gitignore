@@ -3,3 +3,6 @@
 /bazel-out
 /bazel-testlogs
 /bazel-*
+
+# image demo
+image.ppm
