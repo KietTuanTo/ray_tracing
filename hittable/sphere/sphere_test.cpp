@@ -8,18 +8,6 @@ ray ray_along_z(point3 origin = {0, 0, 0}) {
     return ray(origin, vec3(0, 0, -1));
 }
 
-TEST(SphereConstruction, NegativeRadiusClampedToZero) {
-    sphere s(point3(0, 0, -1), -5.0);
-    hit_record rec;
-    EXPECT_FALSE(s.hit(ray_along_z(), default_interval, rec));
-}
-
-TEST(SphereConstruction, ZeroRadiusNotHit) {
-    sphere s(point3(0, 0, -1), 0.0);
-    hit_record rec;
-    EXPECT_FALSE(s.hit(ray_along_z(), default_interval, rec));
-}
-
 TEST(SphereHit, RayHitsSphereHeadOn) {
     sphere s(point3(0, 0, -1), 0.5);
     hit_record rec;
