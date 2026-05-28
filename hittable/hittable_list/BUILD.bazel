@@ -1,0 +1,32 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "hittable_list",
+    srcs = [
+        "hittable_list.cpp",
+    ],
+    hdrs = [
+        "hittable_list.h",
+    ],
+    deps = [
+        "//vec3",
+        "//ray",
+        "//hittable",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
+
+cc_test(
+    name = "hittable_list_test",
+    srcs = [
+        "hittable_list_test.cpp",
+    ],
+    deps = [
+        ":hittable_list",
+        "//hittable/sphere",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)
