@@ -10,7 +10,7 @@ public:
     const point3& origin() const;
     const point3& direction() const;
 
-    point3 at(double t);
+    point3 at(double t) const;
 
 private:
     point3 origin_;
