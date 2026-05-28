@@ -1,25 +1,25 @@
 #include "vec3.h"
 #include <cmath>
-#include <stdexcept>
+#include <exception>
 
-vec3::vec3() : e{0, 0, 0} {};
+vec3::vec3() : e_{0, 0, 0} {};
 
-vec3::vec3(double e0, double e1, double e2) : e{e0, e1, e2} {};
+vec3::vec3(double e0, double e1, double e2) : e_{e0, e1, e2} {};
 
-double vec3::x() const { return e[0]; };
+double vec3::x() const { return e_[0]; };
 
-double vec3::y() const { return e[1]; };
+double vec3::y() const { return e_[1]; };
 
-double vec3::z() const { return e[2]; };
+double vec3::z() const { return e_[2]; };
 
-vec3 vec3::operator-() const { return vec3(-e[0], -e[1], -e[2]); };
+vec3 vec3::operator-() const { return vec3(-e_[0], -e_[1], -e_[2]); };
 
 double vec3::operator[](int i) const {
     if (i < 0 || i >= 3) {
         throw std::out_of_range("Out of range");
     }
 
-    return e[i];
+    return e_[i];
 }
 
 double& vec3::operator[](int i) {
@@ -27,20 +27,20 @@ double& vec3::operator[](int i) {
         throw std::out_of_range("Out of range");
     }
 
-    return e[i];
+    return e_[i];
 }
 
 vec3& vec3::operator+=(const vec3& v) {
-    e[0] += v[0];
-    e[1] += v[1];
-    e[2] += v[2];
+    e_[0] += v[0];
+    e_[1] += v[1];
+    e_[2] += v[2];
     return *this;
 }
 
 vec3& vec3::operator*=(double t) {
-    e[0] *= t;
-    e[1] *= t;
-    e[2] *= t;
+    e_[0] *= t;
+    e_[1] *= t;
+    e_[2] *= t;
     return *this;
 }
 
@@ -51,7 +51,7 @@ vec3& vec3::operator/=(double t) {
 double vec3::length() const { return std::sqrt(length_squared()); };
 
 double vec3::length_squared() const {
-    return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
+    return e_[0] * e_[0] + e_[1] * e_[1] + e_[2] * e_[2];
 }
 
 std::ostream& operator<<(std::ostream& out, const vec3& v) {

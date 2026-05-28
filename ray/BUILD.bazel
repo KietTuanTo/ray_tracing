@@ -1,0 +1,29 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "ray",
+    srcs = [
+        "ray.cpp",
+    ],
+    hdrs = [
+        "ray.h",
+    ],
+    deps = [
+        "//vec3:vec3"
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
+
+cc_test(
+    name = "ray_test",
+    srcs = [
+        "ray_test.cpp",
+    ],
+    deps = [
+        ":ray",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)

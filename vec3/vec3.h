@@ -22,7 +22,7 @@ public:
     double length() const;
     double length_squared() const;
 private:
-    double e[3];
+    double e_[3];
 };
 
 std::ostream& operator<<(std::ostream& out, const vec3& v);
@@ -35,3 +35,5 @@ vec3 operator/(const vec3& v, double t);
 double dot(const vec3& u, const vec3& v);
 vec3 cross(const vec3& u, const vec3& v);
 vec3 unit_vector(const vec3& v);
+
+using point3 = vec3;
