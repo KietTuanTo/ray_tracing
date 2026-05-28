@@ -6,8 +6,9 @@ cc_binary(
         "ray_tracer.cpp",
     ],
     deps = [
-        "//vec3:vec3",
-        "//vec3:color",
-        "//ray:ray",
+        "//common",
+        "//hittable",
+        "//hittable/hittable_list",
+        "//hittable/sphere",
     ],
 )
