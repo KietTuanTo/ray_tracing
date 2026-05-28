@@ -1,0 +1,15 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "hittable",
+    hdrs = [
+        "hittable.h",
+    ],
+    deps = [
+        "//vec3",
+        "//ray",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)

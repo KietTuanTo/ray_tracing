@@ -1,0 +1,31 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "sphere",
+    srcs = [
+        "sphere.cpp",
+    ],
+    hdrs = [
+        "sphere.h",
+    ],
+    deps = [
+        "//vec3",
+        "//ray",
+        "//hittable",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
+
+cc_test(
+    name = "sphere_test",
+    srcs = [
+        "sphere_test.cpp",
+    ],
+    deps = [
+        ":sphere",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)
