@@ -6,11 +6,10 @@ cc_binary(
         "ray_tracer.cpp",
     ],
     deps = [
+        "//camera",
         "//common",
-        "//common:constants",
         "//hittable",
         "//hittable/hittable_list",
         "//hittable/sphere",
-        "//interval",
     ],
 )
