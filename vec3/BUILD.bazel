@@ -23,6 +23,7 @@ cc_library(
     ],
     deps = [
         ":vec3",
+        "//interval",
     ],
     visibility = [
         "//visibility:public",

@@ -13,6 +13,7 @@ public:
     double size() const;
     bool contains(double d) const;
     bool surrounds(double d) const;
+    double clamp(double d) const;
 
     static const interval empty, universe;
 

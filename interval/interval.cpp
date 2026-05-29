@@ -14,5 +14,11 @@ bool interval::contains(double d) const { return min_ <= d && d <= max_; };
 
 bool interval::surrounds(double d) const { return min_ < d && d < max_; };
 
+double interval::clamp(double d) const {
+    if (d < min_) return min_;
+    if (d > max_) return max_;
+    return d;
+}
+
 const interval interval::empty = interval();
 const interval interval::universe = interval(-rt::infinity, rt::infinity);
