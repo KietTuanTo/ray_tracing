@@ -1,8 +1,7 @@
 #pragma once
 
+#include "common/common.h"
 #include "hittable/hittable.h"
-#include "interval/interval.h"
-#include <memory>
 #include <vector>
 
 class hittable_list : public hittable {

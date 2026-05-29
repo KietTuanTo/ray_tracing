@@ -9,6 +9,18 @@ cc_library(
         "//vec3",
         "//vec3:color",
         "//ray",
+        ":constants",
+        "//interval",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
+
+cc_library(
+    name = "constants",
+    hdrs = [
+        "constants.h",
     ],
     visibility = [
         "//visibility:public",

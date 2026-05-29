@@ -1,9 +1,7 @@
 #pragma once
 
+#include "common/common.h"
 #include "hittable/hittable.h"
-#include "interval/interval.h"
-#include "vec3/vec3.h"
-#include "ray/ray.h"
 
 class sphere : public hittable {
 public:

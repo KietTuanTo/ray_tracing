@@ -9,10 +9,8 @@ cc_library(
         "hittable_list.h",
     ],
     deps = [
-        "//vec3",
-        "//ray",
+        "//common",
         "//hittable",
-        "//interval",
     ],
     visibility = [
         "//visibility:public",

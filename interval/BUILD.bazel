@@ -9,7 +9,7 @@ cc_library(
         "interval.h",
     ],
     deps = [
-        "//common",
+        "//common:constants",
     ],
     visibility = [
         "//visibility:public",

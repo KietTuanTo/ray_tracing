@@ -1,8 +1,6 @@
 #pragma once
 
-#include "interval/interval.h"
-#include "ray/ray.h"
-#include "vec3/vec3.h"
+#include "common/common.h"
 
 struct hit_record {
     point3 p;

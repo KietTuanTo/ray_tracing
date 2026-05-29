@@ -9,10 +9,8 @@ cc_library(
         "sphere.h",
     ],
     deps = [
-        "//vec3",
-        "//ray",
+        "//common",
         "//hittable",
-        "//interval",
     ],
     visibility = [
         "//visibility:public",
@@ -26,7 +24,7 @@ cc_test(
     ],
     deps = [
         ":sphere",
-        "//interval",
+        "//common",
         "@googletest//:gtest",
         "@googletest//:gtest_main",
     ],

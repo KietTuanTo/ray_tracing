@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
+#include "common/common.h"
 #include "hittable_list.h"
 #include "hittable/sphere/sphere.h"
-#include "interval/interval.h"
 
 ray ray_along_neg_z() {
     return ray(point3(0, 0, 0), vec3(0, 0, -1));

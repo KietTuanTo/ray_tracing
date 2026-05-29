@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "sphere.h"
-#include "interval/interval.h"
+#include "common/common.h"
 
 const interval default_interval(0.001, 1000.0);
 

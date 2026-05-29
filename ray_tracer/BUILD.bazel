@@ -7,6 +7,7 @@ cc_binary(
     ],
     deps = [
         "//common",
+        "//common:constants",
         "//hittable",
         "//hittable/hittable_list",
         "//hittable/sphere",
